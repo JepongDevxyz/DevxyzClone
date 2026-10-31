@@ -18,8 +18,14 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      # setup-android@v3 is broken on current runners (its sdkmanager
+      # --licenses step crashes on cmdline-tools 16.0) — install directly
+      # with the runner's preinstalled sdkmanager instead.
+      - name: Install Android SDK packages
+        run: |
+          SDKMANAGER=$(ls $ANDROID_HOME/cmdline-tools/*/bin/sdkmanager | sort -V | tail -1)
+          yes | $SDKMANAGER --licenses > /dev/null || true
+          $SDKMANAGER "platform-tools" "platforms;android-34" "build-tools;34.0.0"
       - name: Set up Gradle 8.11.1
         uses: gradle/actions/setup-gradle@v4
         with:
