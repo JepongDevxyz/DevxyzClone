@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DevxyzClone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/dc_primary</item>
+        <item name="colorPrimaryDark">@color/dc_primary_dark</item>
+        <item name="colorAccent">@color/dc_accent</item>
+        <item name="android:windowBackground">@color/dc_bg</item>
+        <item name="android:textColorPrimary">@color/dc_ink</item>
+        <item name="android:textColorSecondary">@color/dc_mut</item>
+    </style>
+</resources>

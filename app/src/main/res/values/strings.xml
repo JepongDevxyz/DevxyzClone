@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DevxyzClone</string>
+    <string name="pick_app">Clone an app</string>
+    <string name="add_clone">+ Add Clone</string>
+    <string name="empty_title">No clones yet</string>
+    <string name="empty_body">Tap + Add Clone, pick an app (for example Muse), and DevxyzClone will create Muse 2, Muse 3, Muse 4 — each with its own separate data space.</string>
+    <string name="powered_by">Powered by Jepong Devxyz</string>
+    <string name="launch">Launch</string>
+    <string name="rename">Rename</string>
+    <string name="info">Clone info</string>
+    <string name="delete">Delete clone</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset_default">Reset to default name</string>
+    <string name="search_hint">Search apps</string>
+</resources>

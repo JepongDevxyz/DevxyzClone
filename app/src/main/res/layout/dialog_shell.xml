@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@color/dc_surface" android:padding="20dp">
+    <TextView android:id="@+id/dlgTitle" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textSize="18sp" android:textStyle="bold" android:textColor="@color/dc_ink"/>
+    <TextView android:id="@+id/dlgBody" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="14sp" android:textColor="@color/dc_mut" android:layout_marginTop="8dp"/>
+    <EditText android:id="@+id/dlgInput" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:singleLine="true" android:textColor="@color/dc_ink" android:visibility="gone" android:layout_marginTop="10dp"/>
+    <TextView android:id="@+id/dlgError" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="13sp" android:textColor="@color/dc_error" android:visibility="gone" android:layout_marginTop="4dp"/>
+    <LinearLayout android:id="@+id/dlgButtons" android:orientation="vertical"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp"/>
+</LinearLayout>

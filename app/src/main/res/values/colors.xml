@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dc_primary">#1565C0</color>
+    <color name="dc_primary_dark">#0D47A1</color>
+    <color name="dc_accent">#7C4DFF</color>
+    <color name="dc_bg">#F6F7FB</color>
+    <color name="dc_surface">#FFFFFF</color>
+    <color name="dc_ink">#14181F</color>
+    <color name="dc_mut">#5A6472</color>
+    <color name="dc_error">#D32F2F</color>
+</resources>
