@@ -1,6 +1,8 @@
 package com.jepongdevxyz.clone;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,10 +44,22 @@ public class DevxyzDialogs {
         // 'filled' must mean something: primary actions are contained buttons,
         // secondary actions (Cancel/Reset/Info...) are text buttons — before
         // this fix every button rendered as a filled primary button.
-        MaterialButton btn=filled
-            ? new MaterialButton(d.getContext())
-            : new MaterialButton(d.getContext(),null,
-                com.google.android.material.R.attr.materialTextButtonStyle);
+        MaterialButton btn=new MaterialButton(d.getContext());
+        if(!filled){
+            // Text-button appearance. Do NOT reference
+            // material.R.attr.materialTextButtonStyle: that attr does not
+            // exist in Material 1.12.0 and broke CI run #2 at this line
+            // (compileDebugJavaWithJavac, "cannot find symbol"). Build the
+            // same look from guaranteed APIs instead: transparent fill,
+            // primary-colored text (day/night aware via dc_primary),
+            // no stroke, no elevation, no vertical insets.
+            btn.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
+            btn.setTextColor(d.getContext().getColor(R.color.dc_primary));
+            btn.setStrokeWidth(0);
+            btn.setElevation(0f);
+            btn.setInsetTop(0);
+            btn.setInsetBottom(0);
+        }
         btn.setText(label); box.addView(btn); return btn; }
     public static void message(Context c,String title,String body,Runnable ok){
         Dialog d=base(c,title,body);
